@@ -42,7 +42,7 @@ Zašto treba pisati čist kod?
 
 - Čist kod je lak za čitanje i razumevanje. Jasno strukturiran, sa smislenim nazivima promenljivih i funkcija, olakšava razumevanje onima koji čitaju kod, uključujući i vas same u budućnosti.
 - Kako projekti rastu, potrebno je održavanje koda. Čist kod smanjuje napor potreban za pronalaženje i ispravku grešaka (bug-ova), dodavanje novih funkcionalnosti ili izmenu postojećih.
--Čist kod smanjuje složenost projekta, olakšavajući dodavanje novih funkcionalnosti ili razumevanje poslovanja.
+- Čist kod smanjuje složenost projekta, olakšavajući dodavanje novih funkcionalnosti ili razumevanje poslovanja.
 - Čist kod pomaže u ubrzanju razvojnog ciklusa. Jasno strukturiran, dokumentovan i dobro organizovan kod omogućava brže razumevanje postojećih delova i brže dodavanje novih.
 - Čist kod olakšava timski rad. Različiti članovi tima mogu efikasnije raditi zajedno na projektu ako je kod čitljiv i strukturiran.
 - Projekti čiji je kod čist, imaju tendenciju da budu dugoročno održivi. Dugotrajno održavanje koda je olakšano čistim pristupom.
