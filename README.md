@@ -12,8 +12,9 @@ Ovaj kurs je deo projekta [IMI Open Educational Resources](https://imioer.github
 - [Vežbe 4](vezbe/04.md)  (In progress)
 - [Vežbe 5](vezbe/05.md)  (Ready for review)
 
-### Korisni materijali
+### Dodatni materijali (opciono)
 
+- [Liste](korisni-materijali/liste.md)  (Ready for review)
 - [Korišćenje Eclipse IDE](korisni-materijali/eclipse.md) (TODO)
 - [Smernice za bolje pisanje koda](korisni-materijali/bolji-kod.md) (In progress)
 
