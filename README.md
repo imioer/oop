@@ -9,6 +9,8 @@ Ovaj kurs je deo projekta [IMI Open Educational Resources](https://imioer.github
 - [Vežbe 1](vezbe/01.md)  (Ready for review)
 - [Vežbe 2](vezbe/02.md)  (Ready for review)
 - [Vežbe 3](vezbe/03.md)  (Ready for review)
+- [Vežbe 4](vezbe/04.md)  (In progress)
+- [Vežbe 5](vezbe/05.md)  (Ready for review)
 
 ### Korisni materijali
 
