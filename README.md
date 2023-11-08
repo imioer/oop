@@ -16,7 +16,7 @@ Ovaj kurs je deo projekta [IMI Open Educational Resources](https://imioer.github
 
 - [Liste](korisni-materijali/liste.md)  (Ready for review)
 - [Korišćenje Eclipse IDE](korisni-materijali/eclipse.md) (TODO)
-- [Smernice za bolje pisanje koda](korisni-materijali/bolji-kod.md) (In progress)
+- [Smernice za bolje pisanje koda](korisni-materijali/bolji-kod.md) (Ready for review)
 
 [licence]: http://creativecommons.org/licenses/by-nc-sa/4.0/
 [licence-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg

@@ -7,6 +7,7 @@
     - [Izvori](#izvori)
     - [Vrste konvencija imenovanja](#vrste-konvencija-imenovanja)
     - [Upotreba konvencija u Javi](#upotreba-konvencija-u-javi)
+    - [Imenovanje promenljivih, klasa i metoda](#imenovanje-promenljivih-klasa-i-metoda)
   - [Razmaci u Javi](#razmaci-u-javi)
     - [if](#if)
     - [for i while](#for-i-while)
@@ -20,8 +21,9 @@
     - [Ternarni operator](#ternarni-operator)
     - [Komentari](#komentari)
     - [Nepotrebne linije](#nepotrebne-linije)
-  - [Parametri metoda - TODO](#parametri-metoda---todo)
-  - [Pisanje komentara - TODO](#pisanje-komentara---todo)
+  - [Pisanje komentara](#pisanje-komentara)
+  - [Funkcije i metode](#funkcije-i-metode)
+  - [Struktuiranje kod](#struktuiranje-kod)
   - [DRY (Don't repeat yourself) princip](#dry-dont-repeat-yourself-princip)
   - [KISS (Keep it simple, stupid) princip](#kiss-keep-it-simple-stupid-princip)
   - [SOLID principi](#solid-principi)
@@ -54,6 +56,7 @@ Zašto treba pisati čist kod?
 - [Oracle](https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html#:~:text=Naming%20conventions%20make%20programs%20more,helpful%20in%20understanding%20the%20code.)  
 - [Server side](https://www.theserverside.com/feature/Java-naming-conventions-explained#:~:text=For%20variables%2C%20the%20Java%20naming,a%20lower%20camel%20case%20syntax.)
 - [Baeldung](https://www.baeldung.com/java-clean-code)
+- [Academind](https://github.com/academind/clean-code-course-code)
 
 Prilikom imenovanja promenljivih, metoda, klasa, ... se treba truditi da ih imenujete smisleno i da im ime ne bude predugačko.
 
@@ -76,6 +79,12 @@ Prilikom imenovanja promenljivih, metoda, klasa, ... se treba truditi da ih imen
 |klase i interfejsi|Pascal Case|
 |konstante|Screaming Snake Case|
 |paketi|Lower Dot Case|
+
+### Imenovanje promenljivih, klasa i metoda
+
+Više o tome možete videti na [sledećoj prezetaciji](https://github.com/academind/clean-code-course-code/blob/naming-extra-attachments/slides-naming.pdf).
+
+[Sumirano](https://github.com/academind/clean-code-course-code/blob/naming-extra-attachments/Naming-Summary.pdf)
 
 ## Razmaci u Javi
 
@@ -240,13 +249,20 @@ void test() {
 }
 ```
 
-## Parametri metoda - TODO
+## Pisanje komentara
 
-TODO
+[Slajdovi](https://github.com/academind/clean-code-course-code/blob/comments-formatting-extra-attachments/slides-comments-formatting.pdf)  
+[Sumirano](https://github.com/academind/clean-code-course-code/blob/comments-formatting-extra-attachments/Comments-Formatting-Summary.pdf)
 
-## Pisanje komentara - TODO
+## Funkcije i metode
 
-TODO
+[Slajdovi](https://github.com/academind/clean-code-course-code/blob/functions-extra-attachments/slides-functions.pdf)  
+[Sumirano](https://github.com/academind/clean-code-course-code/blob/functions-extra-attachments/Functions-Summary.pdf)
+
+## Struktuiranje kod
+
+[Slajdovi](https://github.com/academind/clean-code-course-code/blob/control-extra-attachments/slides-control-structures.pdf)  
+[Sumirano](https://github.com/academind/clean-code-course-code/blob/control-extra-attachments/Control-Structures-Summary.pdf)
 
 ## DRY (Don't repeat yourself) princip
 
@@ -271,7 +287,9 @@ KISS princip je akronim za "Keep It Simple, Stupid". Ovaj princip se odnosi na f
 
 ## SOLID principi
 
-[Baeldung](https://www.baeldung.com/solid-principles)
+[Baeldung](https://www.baeldung.com/solid-principles)  
+[Academind slajdovi](https://github.com/academind/clean-code-course-code/blob/obj-extra-attachments/slides-objects.pdf)  
+[Academind sumirano](https://github.com/academind/clean-code-course-code/blob/obj-extra-attachments/Objects-Summary.pdf)
 
 Evo šta svaki od SOLID principa znači:
 
