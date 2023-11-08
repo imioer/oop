@@ -129,7 +129,7 @@ while (condition);
 ### switch
 
 ```java
-switch(expression) {
+switch (expression) {
   case x:
     // code block
     break;
