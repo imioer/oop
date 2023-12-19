@@ -4,6 +4,8 @@ Ovaj kurs je deo projekta [IMI Open Educational Resources](https://imioer.github
 
 ## Vežbe
 
+**Materijali sadrže one stvari koje su rađene na vežbama.** <b style="color:red;">PRE SVEGA, KORISTITE MATERIJALE SA PREDAVANJA I ZVANIČNU DOKUMENTACIJU JER POSTOJI MOGUĆNOST DA JE NEŠTO IZOSTAVLJENO ILI POGREŠNO NAPISANO</b>
+
 ### Skripte
 
 - [Vežbe 1](vezbe/01.md)  (Ready for review)

@@ -2,6 +2,7 @@
 
 - [GUI (Graphical User Interface) u Java programskom jeziku](#gui-graphical-user-interface-u-java-programskom-jeziku)
   - [Uvod](#uvod)
+  - [Otvaranje slike](#otvaranje-slike)
   - [Grafičke komponente](#grafičke-komponente)
     - [Component](#component)
     - [Container](#container)
@@ -12,6 +13,14 @@
   - [Raspoređivanje komponenti](#raspoređivanje-komponenti)
     - [Menadžeri postavke](#menadžeri-postavke)
   - [Događaji](#događaji)
+    - [Mouse listener](#mouse-listener)
+    - [MouseEvent](#mouseevent)
+      - [MouseEvent fildovi](#mouseevent-fildovi)
+      - [MouseEvent metode](#mouseevent-metode)
+    - [Obrada unosa sa tastature](#obrada-unosa-sa-tastature)
+    - [KeyEvent](#keyevent)
+      - [KeyEvent fildovi](#keyevent-fildovi)
+      - [KeyEvent metode](#keyevent-metode)
 
 ## Uvod
 
@@ -38,6 +47,19 @@ Neke kontrole:
 
 Svaki deo grafičkog interfejsa je implementiran kao klasa nekog GUI paketa.
 
+## Otvaranje slike
+
+U Javi možemo učitati sliku sa neke lokacije, smestiti je u neki objekat i posle je koristiti, tako što ćemo najčešće da je postavimo na neko dugme.
+
+```java
+// otvaranje slike
+ImageIcon icon = new ImageIcon("putanja/do/slike"); // ili new ImageIcon(getClass().getResource("putanja/do/slike"))
+```
+
+**Potrebno je obratiti pažnju na putanju do slike, jer konstruktor može da baci RuntimeException.**
+
+[ImageIcon zvanična dokumentacija](https://docs.oracle.com/javase/8/docs/api/javax/swing/ImageIcon.html)
+
 ## Grafičke komponente
 
 **Uprošćen dijagram klasa osnovnih GUI klasa**
@@ -48,12 +70,12 @@ Svaki deo grafičkog interfejsa je implementiran kao klasa nekog GUI paketa.
 Klasa [**Component**](https://docs.oracle.com/javase/8/docs/api/java/awt/Component.html) je zajednička osnovna klasa za sve GUI kontrole i reprezentuje nešto što ima poziciju,veličinu,može se iscrtati na ekranu i prihvata ulazne događaje.  
 Neke metode, koje ćete koristiti na kolokvijumu:
 
-- **add** - pogledati [Raspoređivanje komponenti](#raspoređivanje-komponenti)
-- **Color getBackground()** - geter za pozadinu komponente
-- **void setBackground(Color c)** - seter za pozadinu komponente
-- **void setBounds(int x, int y, int width, int height)** - pocetak prozora ce biti u tacki (`x`, `y`) u odnosu na gornji levi ugao ekrana, sirina ce biti `width` a visina `height`
-- **void setBounds(Rectangle r)** - svi gorenavedine parametri su "upakovani" u instancu klase **Rectangle**
-- **void setVisible(boolean b)** - prikazuje ili sakriva komponentu
+- `public add` - pogledati [Raspoređivanje komponenti](#raspoređivanje-komponenti)
+- `public Color getBackground()` - geter za pozadinu komponente
+- `public void setBackground(Color c)` - seter za pozadinu komponente
+- `public void setBounds(int x, int y, int width, int height)` - pocetak prozora ce biti u tacki (`x`, `y`) u odnosu na gornji levi ugao ekrana, sirina ce biti `width` a visina `height`
+- `public void setBounds(Rectangle r)` - svi gorenavedine parametri su "upakovani" u instancu klase **Rectangle**
+- `public void setVisible(boolean b)` - prikazuje ili sakriva komponentu
 
 ### Container
 
@@ -91,14 +113,22 @@ public class MyFrame extends JFrame {
 
 ### Dugmići
 
-**JButton** – regularno dugme  
+**JButton** – regularno dugme
+
+- Neke metode, koje ćete koristiti na kolokvijumu:  
+
+  - `public String getText()` - geter za tekst koji je postavljen na dugme
+  - `public void setText()` - seter tekst dugmeta
+  - `public Icon getIcon()` - geter za ikonicu koja je postaljena na dugme
+  - `public void setIcon(Icon icon)` - seter za ikonicu koja se postavlja na dugme
+  
 **JCheckBox** – dugme sa checkbox-om sa leve strane  
 **JRadioButton** – dugmad koja operišu u grupi, tako da je samo jedno dugme pritisnuto u datom trenutku. Ovo
 grupisanje se postiže dodavanjem JRadioButton objekta ButtonGroup objektu
 
 ### Tekst komponente
 
-**JLabel** – pasivna komponenta, ne može se editovati, služi za označavanje drugih komponenti  
+**JLabel** – pasivna komponenta, ne može se editovati, služi za označavanje drugih komponenti. Gorenavedene metode koje postoje u klasi **JButton** postoje i u klasi JLabel.  
 **JTextField** – kao JLabel samo se može editovati. Predstavlja jednu liniju teksta.  
 **JFormattedTextField** – to je JTextField komponenta koja ima kontrolu formata podataka koji se
 unose/prikazuju.  
@@ -108,7 +138,25 @@ skrolovanje, ali to se može postići stavljanjem komponente JTextArea u kontejn
 ### Liste komponente
 
 **JList** – definiše ograničenu listu stavki  
-**JComboBox** - depušta korisniku da izabere jednu stavku iz padajuće liste
+**JComboBox** - dopušta korisniku da izabere jednu stavku iz padajuće liste. [Zvanična dokumentacija](https://docs.oracle.com/javase/8/docs/api/javax/swing/JComboBox.html). [Tutorijal](https://www.codejava.net/java-se/swing/jcombobox-basic-tutorial-and-examples)  
+NAPOMENA: Klasa JComboBox je **generička**. E je tip koji se prosleđuje kao parametar generičkoj klasi (može biti String, Object, ...). Primer: new JComboBox&lt;String&gt;( );
+
+- Neke metode, koje ćete koristiti na kolokvijumu:
+  - `public void addItem(E item)` - dodavanje stavke koju korisnik može da izabere u combo box
+  - `public E	getItemAt(int index)` - vraća stavku koja se nalazi na indeksu *index*. Indeksi kreću od 0.
+  - `public int	getItemCount()` - broj stavki u combo box listi
+  - `public int	getMaximumRowCount()` - maksimalan broj stavki koji se može videti u listi bez skrolovanja
+  - `public int	getSelectedIndex()` - indeks selektovane stavke
+  - `public Object getSelectedItem()` - odabrana stavka
+  - `public void insertItemAt(E item, int index)` - ubaci element na određeni indeks
+  - `public void removeAllItems()` - ukloni sve stavke
+  - `public void removeItemAt(int anIndex)` - uklanja stavku na indeksu *anIndex*
+  - `protected void	selectedItemChanged()` - metoda koja se poziva kada korisnik promeni odabranu stavku
+  - `public void setEditable(boolean aFlag)` - podešava da li korisnik može ručno da unese vrednost ili ne
+  - `public void setEnabled(boolean b)` - podešava da li korisnik može da izabere drugu vrednost ili ne
+  - `public void setMaximumRowCount(int count)` - setuje maksimalan broj stavki koje korisnik može videti u listi bez skrolovanja
+  - `public void setSelectedIndex(int anIndex)` - setuje indeks selektovane stavke
+  - `public void setSelectedItem(Object anObject)` - setuje selektovanu stavku
 
 ## Raspoređivanje komponenti
 
@@ -119,23 +167,23 @@ Kontejner sadrži:
     Komponente unutar kontejnera se prikazuju unutar površi koju zauzima kontejner na ekranu.  
     Komponente su smeštene u listu, pa imaju svoje indekse.
 
-    - **int getComponentCount()** – vraća broj komponenti u kontejneru
-    - **Component getComponent(int index)** – vraća komponentu koja se identifikuje datim indeksom. Radi se o indeksu niza, pa mora biti
+    - `public int getComponentCount()` – vraća broj komponenti u kontejneru
+    - `public Component getComponent(int index)` – vraća komponentu koja se identifikuje datim indeksom. Radi se o indeksu niza, pa mora biti
     u opsegu [0, count-1].
-    - **Component[] getComponents()** – vraća niz komponenti iz kontejnera
-    - Nekoliko verzija **add()** metoda – dodavanje komponete kontejneru
-      - **Component add(Component c)** – dodaje komponentu c na kraj liste komponenti sačuvane u kontejneru. Vraća se c.
-      - **Component add(Component c, int index)** – komponenta se smešta na datu poziciju. Ako je index -1 komponenta se
+    - `public Component[] getComponents()` – vraća niz komponenti iz kontejnera
+    - Nekoliko verzija `add()` metoda – dodavanje komponete kontejneru
+      - `public Component add(Component c)` – dodaje komponentu c na kraj liste komponenti sačuvane u kontejneru. Vraća se c.
+      - `public Component add(Component c, int index` – komponenta se smešta na datu poziciju. Ako je index -1 komponenta se
 dodaje na kraj liste, u suprotnom indeks mora biti ne manji od 0 i manji od trenutnog broja komponenti u kontejneru.Vraća
 se c.
-    - **void add(Component c, Object constraints)** - ograničenja specifična za menadžer postavke
-    - **void add(Component c, Object constraints, int index)**
+    - `public void add(Component c, Object constraints` - ograničenja specifična za menadžer postavke
+    - `public void add(Component c, Object constraints, int index)`
 
 2. **menadžera postavke**  
     Menadžer postavke je objekat neke od klasa tipa **LayoutManager**. On sadrži opis načina raspoređivanja komponenti u kontejneru.  
 
-    - **void setLayout(LayoutManager mgr)** - setuje LayoutManager-a za kontejner
-    - **LayoutManager getLayout()**
+    - `void setLayout(LayoutManager mgr)` - setuje LayoutManager-a za kontejner
+    - `LayoutManager getLayout()`
 
 ### Menadžeri postavke
 
@@ -178,3 +226,81 @@ Dva koraka u definisanju obrade:
 
 1. definisanje osluškivača
 2. registracija osluškivača kod izvora
+
+Klase osluškivača mora da implemetira interfejs nekog osluškivača ili
+da proširuje neku klasu koja implementira interfejs osluškivača.
+
+Registrovanje instance klase osluškivača događaja kod izvora:
+
+```java
+izvorDogadjaja.addActionListener(listener); // listener je instanca klase koja implementira interfejs ActionListener
+// ili
+izvorDogadjaja.addMouseListener(listener); // listener je instanca klase koja implementira interfejst MouseListener
+```
+
+**Samo** komponente Button, List i TextField generišu **ActionEvent**. Sve komponente generišu **MouseEvent**.
+
+*Standardni osluškivači*
+![Listeneri](../slike/vezbe/gui/Listeneri.png)
+
+Adapteri su klase koje implementiraju interfejs osluškivača događaja, tako da programer treba da prepiše samo one metode koje su mu potrebne, kako ne bi morao da implementira sve metode.
+
+**Svi događaji** poseduju metode:
+
+- `public int getID()` - vraća tip događaja
+- `public Object getSource()` - vraća izvor događaja
+
+### Mouse listener
+
+Interfejs osluškivača miša predviđa 5 metoda:
+
+- public void **mouseClicked**(MouseEvent d); //pritisnuto i otpušteno dugme. pozicija miša nije pomerena van dugmeta.
+- public void **mouseEntered**(MouseEvent d); //kursor ušao u polje komponente
+- public void **mouseExited**(MouseEvent d); //kursor izašao iz polja komponente
+- public void **mousePressed**(MouseEvent d); //pritisnuto dugme
+- public void **mouseReleased**(MouseEvent d); //otpušteno dugme
+
+### MouseEvent
+
+[Zvanična dokumentacija](https://docs.oracle.com/javase/8/docs/api/java/awt/event/MouseEvent.html)
+
+#### MouseEvent fildovi
+
+- `public static int BUTTON1` - levi klik
+- `public static int BUTTON2` - klik na scroll
+- `public static int BUTTON3` - desni klik
+
+#### MouseEvent metode
+
+- `public int getButton()` - da li je korisnik koristio levi klik, desni klik ili klik na scroll
+- `public Point getLocationOnScreen()` - x i y koordinate na ekranu
+- `public Point getPoint()` - x i y koordinate relativne u odnosu na izvor događaja
+
+### Obrada unosa sa tastature
+
+```java
+KeyboardFocusManager manager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
+manager.addKeyEventDispatcher(new KeyEventDispatcher() {
+  
+  @Override
+  public boolean dispatchKeyEvent(KeyEvent e) {
+    // TODO Logika
+    return false;
+  }
+});
+```
+
+### KeyEvent
+
+[Zvanična dokumentacija](https://docs.oracle.com/javase/8/docs/api/java/awt/event/KeyEvent.html)
+
+#### KeyEvent fildovi
+
+- `public static int VK_1` - dugme 1
+- `public static int VK_A` - dugme A
+- ...
+
+#### KeyEvent metode
+
+- `public char getKeyChar()` - ako korisnik pritisne dugme "A", vratiće "A". ako pritisne "1", vratice "1", ...
+- `public int getKeyCode()` - vratiće KeyEvent.VK_1 ili KeyEvent.VK_A ili ...
