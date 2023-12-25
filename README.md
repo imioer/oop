@@ -16,12 +16,11 @@ Ovaj kurs je deo projekta [IMI Open Educational Resources](https://imioer.github
 - [Vežbe 6](vezbe/06.md)  (`Ready for review`)
 - [Slojevi](vezbe/slojevi.md) (`Ready for review`)
 - [GUI](vezbe/gui.md) (`Ready for review`)
-- [Niti](vezbe/niti.md) (`In progress`)
+- [Niti](vezbe/niti.md) (`Ready for review`)
 
 ### Dodatni materijali (opciono)
 
 - [Liste](korisni-materijali/liste.md)  (`Ready for review`)
-- [Korišćenje Eclipse IDE](korisni-materijali/eclipse.md) (`TODO`)
 - [Smernice za bolje pisanje koda](korisni-materijali/bolji-kod.md) (`Ready for review`)
 
 ### Napomene
