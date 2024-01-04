@@ -8,6 +8,9 @@
     - [Container](#container)
     - [Frame](#frame)
     - [Dugmići](#dugmići)
+    - [Dijalozi](#dijalozi)
+    - [Dijalog poruke](#dijalog-poruke)
+    - [Da-ne dijalog](#da-ne-dijalog)
     - [Tekst komponente](#tekst-komponente)
     - [Liste komponente](#liste-komponente)
   - [Raspoređivanje komponenti](#raspoređivanje-komponenti)
@@ -125,6 +128,32 @@ public class MyFrame extends JFrame {
 **JCheckBox** – dugme sa checkbox-om sa leve strane  
 **JRadioButton** – dugmad koja operišu u grupi, tako da je samo jedno dugme pritisnuto u datom trenutku. Ovo
 grupisanje se postiže dodavanjem JRadioButton objekta ButtonGroup objektu
+
+### Dijalozi
+
+### Dijalog poruke
+
+```java
+JOptionPane.showMessageDialog(null, "Poruka"); // otvara dijalog i prikazuje poruku
+```
+
+### Da-ne dijalog
+
+```java
+int status = JOptionPane.showConfirmDialog(null, "Poruka", "Naslov", JOptionPane.YES_NO_OPTION); // otvara Da-ne dijalog
+
+if (status == JOptionPane.YES_OPTION) {
+  // korisnik je odabrao "DA" opciju
+}
+
+if (status == JOptionPane.NO_OPTION) {
+  // korisnik je odabrao "NE" opciju
+}
+
+if (status == JOptionPane.CANCEL_OPTION) {
+  // korisnik je zatvorio dijalog
+}
+```
 
 ### Tekst komponente
 
