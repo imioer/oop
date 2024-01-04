@@ -79,6 +79,8 @@ Neke metode, koje ćete koristiti na kolokvijumu:
 - `public void setBounds(int x, int y, int width, int height)` - pocetak prozora ce biti u tacki (`x`, `y`) u odnosu na gornji levi ugao ekrana, sirina ce biti `width` a visina `height`
 - `public void setBounds(Rectangle r)` - svi gorenavedine parametri su "upakovani" u instancu klase **Rectangle**
 - `public void setVisible(boolean b)` - prikazuje ili sakriva komponentu
+- `public void setSize(int width, int height)` - setuje veličinu
+- `public void setPreferredSize(int width, int height)` - setuje željenu (najčešće minimalnu) veličinu
 
 ### Container
 
@@ -97,6 +99,8 @@ tiče, najčešće sadrži jedan JFrame u koji se smeštaju
 kontrole. **contentPane** je Container koji zauzima centralni deo
 prozora i u njega se, najčešće, izuzimajući menije,
 smeštaju komponente (dugmići, padajuće liste itd.)
+
+- `public void pack()` - Ova metoda prilagođava veličinu prozora (Window) tako da odgovara njegovom sadržaju. Na primer, ako imate prozor sa sadržajem koji se dinamički menja, pozivanjem pack() će automatski prilagoditi veličinu prozora kako bi se sve komponente sadržaja mogle videti bez potrebe za scroll trakama.
 
 **Primer kreiranje custom JFrame klase**
 
